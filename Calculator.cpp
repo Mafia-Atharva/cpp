@@ -9,8 +9,10 @@ void menu(){
 int main() {
     float choice,a,b;
     bool loop=true;
-    cout<<"Enter any 2 numbers:";
-    cin>>a>>b;
+    cout<<"\nEnter first number:";
+    cin>>a;
+    cout<<"\nEnter second number:";
+    cin>>b;
     while(loop==true){
         menu();
         cin>>choice;
@@ -28,6 +30,7 @@ int main() {
         }
         else if(choice==5){
             loop=false;
+            cout<<"Thank you for using this program!";
         }
         else{
             cout<<"\nPlease enter a valid choice!";
