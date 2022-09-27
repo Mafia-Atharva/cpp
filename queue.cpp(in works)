@@ -1,0 +1,68 @@
+#include<iostream>
+using namespace std;
+class queue
+{
+    int job,f,r,size,i,a[];
+    public:
+    queue(int size){
+        int a[size];
+        f=-1;
+        r=-1;
+    }
+    void insert(){
+        cout<<"Enter job to insert:";
+        cin>>job;
+        if(r==-1 && f==-1){
+            f++;
+            r++;
+            a[r]=job;
+        }
+        else{
+            r++;
+            a[r]=job;
+        }
+    }
+    void del(){
+        if(r==f){
+            f=r=-1;
+            cout<<"Queue is empty!";
+        }
+        else{
+            f++;
+            cout<<a[f]<<" has been deleted";
+        }
+    }
+    void display(){
+        if(f==r){
+            cout<<"Queue is empty!";
+        }
+        else{
+            cout<<"Current queue:";
+            for(i=0;i<=size;i++){
+                cout<<a[i];
+            }
+        }
+    }
+};
+
+int menu1(){
+    int choice;
+    cout<<"**************MENU**************";
+    cout<<"1.Insert job\n2.Delete job\n3.Print queue\n4.Exit";
+    cout<<"Enter your choice(1/2/3/4):"
+    return(choice);
+}
+
+int main()
+{
+    int length,option;
+    bool loop=true;
+    cout<<"Enter size of queue:";
+    cin>>length;
+    queue q(length);
+    while(loop==true){
+        option=menu();
+        
+    }
+    q.display();
+}
