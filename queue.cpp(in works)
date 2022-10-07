@@ -10,7 +10,7 @@ class queue
         r=-1;
     }
     void insert(){
-        cout<<"Enter job to insert:";
+        cout<<"\nEnter job to insert:";
         cin>>job;
         if(r==-1 && f==-1){
             f++;
@@ -25,7 +25,7 @@ class queue
     void del(){
         if(r==f){
             f=r=-1;
-            cout<<"Queue is empty!";
+            cout<<"\nQueue is empty!";
         }
         else{
             f++;
@@ -34,35 +34,50 @@ class queue
     }
     void display(){
         if(f==r){
-            cout<<"Queue is empty!";
+            cout<<"\nQueue is empty!";
         }
         else{
-            cout<<"Current queue:";
-            for(i=0;i<=size;i++){
-                cout<<a[i];
+            cout<<"\nCurrent queue:";
+            for(i=f;i<=r;i++){
+                cout<<a[i]<<" ";
             }
         }
     }
 };
 
-int menu1(){
+void menu(){
     int choice;
-    cout<<"**************MENU**************";
-    cout<<"1.Insert job\n2.Delete job\n3.Print queue\n4.Exit";
-    cout<<"Enter your choice(1/2/3/4):"
-    return(choice);
+    cout<<"\n**************MENU**************";
+    cout<<"\n1.Insert job\n2.Delete job\n3.Print queue\n4.Exit";
+    cout<<"\nEnter your choice(1/2/3/4):";
 }
 
 int main()
 {
-    int length,option;
+    int length,choice;
     bool loop=true;
     cout<<"Enter size of queue:";
     cin>>length;
     queue q(length);
     while(loop==true){
-        option=menu();
+        menu();
+        cin>>choice;
+        if(choice==1){
+            q.insert();
+        }
+        else if(choice==2){
+            q.del();
+        }
+        else if(choice==3){
+            q.display();
+        }
+        else if(choice==4){
+            loop=false;
+            cout<<"\nThank you for using this program!";
+        }
+        else{
+            cout<<"\nPlease enter a valid choice.";
+        }
         
     }
-    q.display();
 }
