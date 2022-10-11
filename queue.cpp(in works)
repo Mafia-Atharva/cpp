@@ -2,17 +2,25 @@
 using namespace std;
 class queue
 {
-    int job,f,r,size,i,a[];
+    int job,x,f,r,size,i,a[];
     public:
     queue(int size){
         int a[size];
         f=-1;
         r=-1;
     }
+    int empty(){
+        if(f==-1 && r==-1){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
     void insert(){
         cout<<"\nEnter job to insert:";
         cin>>job;
-        if(r==-1 && f==-1){
+        if(empty()){
             f++;
             r++;
             a[r]=job;
@@ -23,9 +31,11 @@ class queue
         }
     }
     void del(){
-        if(r==f){
+        if(f==r){
+            x=a[f];
             f=r=-1;
-            cout<<"\nQueue is empty!";
+            cout<<"Deleted element: "<<x;
+            cout<<"\nQueue is now empty!";
         }
         else{
             cout<<"Deleted element: "<<a[f];
@@ -33,7 +43,7 @@ class queue
         }
     }
     void display(){
-        if(f==r){
+        if(empty()){
             cout<<"\nQueue is empty!";
         }
         else{
