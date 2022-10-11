@@ -28,8 +28,8 @@ class queue
             cout<<"\nQueue is empty!";
         }
         else{
+            cout<<"Deleted element: "<<a[f];
             f++;
-            cout<<a[f]<<" has been deleted";
         }
     }
     void display(){
