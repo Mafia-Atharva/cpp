@@ -11,8 +11,22 @@ int main() {
     bool loop=true;
     cout<<"\nEnter first number:";
     cin>>a;
+    while (cin.fail())
+        {
+            cout << "Error:try entering a number\n";
+            cin.clear();
+            cin.ignore(256, '\n');
+            cin >> a;
+        }
     cout<<"\nEnter second number:";
     cin>>b;
+    while (cin.fail())
+        {
+            cout << "Error:try entering a number\n";
+            cin.clear();
+            cin.ignore(256, '\n');
+            cin >> b;
+        }
     while(loop==true){
         menu();
         cin>>choice;
