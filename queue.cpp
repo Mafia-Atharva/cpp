@@ -20,6 +20,13 @@ class queue
     void insert(){
         cout<<"\nEnter job to insert:";
         cin>>job;
+        while (cin.fail())
+        {
+            cout << "Error:try entering a number\n";
+            cin.clear();
+            cin.ignore(256, '\n');
+            cin >> job;
+        }
         if(empty()){
             f++;
             r++;
